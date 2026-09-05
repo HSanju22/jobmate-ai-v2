@@ -1,8 +1,13 @@
 import Container from '../components/Container';
 import './analyze.css';
+import Navbar from '../components/landing/Navbar';
+import Footer from '../components/landing/Footer';
 
 function Analyze() {
   return (
+    <>
+    <Navbar/>
+    
     <div className="analyze-page">
       {/* Page Header */}
       <section className="analyze-header">
@@ -156,6 +161,9 @@ function Analyze() {
         </Container>
       </section>
     </div>
+
+    <Footer/>
+    </>
   );
 }
 
