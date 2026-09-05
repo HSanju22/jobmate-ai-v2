@@ -1,0 +1,174 @@
+/* =========================================================
+   JobMate V2 — Global Design System
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Design Tokens
+   --------------------------------------------------------- */
+
+:root {
+  /* Colors */
+  --jm-primary: #5b2a86;
+  --jm-primary-hover: #4a1f6e;
+
+  --jm-background: #faf5ef;
+  --jm-surface: #ffffff;
+
+  --jm-text: #2e1a3b;
+  --jm-text-muted: #6b5b7b;
+
+  --jm-border: #e5d9f0;
+
+  --jm-success: #2e7d32;
+  --jm-warning: #b26a00;
+  --jm-error: #c62828;
+
+  /* Spacing */
+  --jm-space-1: 0.25rem;
+  --jm-space-2: 0.5rem;
+  --jm-space-3: 0.75rem;
+  --jm-space-4: 1rem;
+  --jm-space-5: 1.5rem;
+  --jm-space-6: 2rem;
+  --jm-space-7: 3rem;
+  --jm-space-8: 4rem;
+
+  /* Border Radius */
+  --jm-radius-sm: 4px;
+  --jm-radius-md: 8px;
+  --jm-radius-lg: 12px;
+  --jm-radius-full: 9999px;
+
+  /* Shadows */
+  --jm-shadow-sm: 0 1px 3px rgba(46, 26, 59, 0.08);
+  --jm-shadow-md: 0 4px 12px rgba(46, 26, 59, 0.10);
+  --jm-shadow-lg: 0 10px 30px rgba(46, 26, 59, 0.12);
+
+  /* Typography */
+  --jm-font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --jm-font-size-sm: 0.875rem;
+  --jm-font-size-base: 1rem;
+  --jm-font-size-lg: 1.125rem;
+  --jm-font-size-xl: 1.5rem;
+  --jm-font-size-2xl: 2.25rem;
+  --jm-font-size-3xl: 3rem;
+
+  --jm-font-weight-normal: 400;
+  --jm-font-weight-medium: 500;
+  --jm-font-weight-bold: 700;
+
+  --jm-line-height-tight: 1.2;
+  --jm-line-height-normal: 1.5;
+  --jm-line-height-relaxed: 1.7;
+
+  /* Layout */
+  --jm-container-width: 1200px;
+}
+
+
+/* ---------------------------------------------------------
+   Reset
+   --------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: var(--jm-background);
+  color: var(--jm-text);
+  font-family: var(--jm-font-family);
+  font-size: var(--jm-font-size-base);
+  line-height: var(--jm-line-height-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ---------------------------------------------------------
+   Typography
+   --------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--jm-text);
+  line-height: var(--jm-line-height-tight);
+}
+
+p {
+  margin: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Layout Container
+   --------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--jm-container-width);
+  margin: 0 auto;
+  padding: 0 var(--jm-space-4);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--jm-space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--jm-space-8);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Accessibility
+   --------------------------------------------------------- */
+
+:focus-visible {
+  outline: 3px solid var(--jm-primary);
+  outline-offset: 3px;
+}
