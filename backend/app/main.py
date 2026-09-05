@@ -1,9 +1,13 @@
 from fastapi import FastAPI
+from sqlalchemy import text
+
+from app.core.config import settings
+from app.db.database import engine
+
 
 app = FastAPI(
-    title="JobMate API",
-    description="Backend API for the JobMate AI-powered job application assistant.",
-    version="2.0.0",
+    title=settings.app_name,
+    version=settings.app_version,
 )
 
 
@@ -11,7 +15,7 @@ app = FastAPI(
 def root():
     return {
         "message": "JobMate API is running",
-        "version": "2.0.0",
+        "version": settings.app_version,
     }
 
 
@@ -19,4 +23,15 @@ def root():
 def health_check():
     return {
         "status": "healthy",
+    }
+
+
+@app.get("/health/database")
+def database_health_check():
+    with engine.connect() as connection:
+        connection.execute(text("SELECT 1"))
+
+    return {
+        "status": "healthy",
+        "database": "connected",
     }
